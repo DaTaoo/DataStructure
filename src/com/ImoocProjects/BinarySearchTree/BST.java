@@ -249,27 +249,38 @@ public class BST<E extends Comparable<E>> {
             return null;
         }
 
-        if (root.left == null && root.right == null) {
-            return root;
-        }
+        Node right = invertTree(root.right);
+        Node left = invertTree(root.left);
 
-        if (root.left == null) { // root.right != null
-            root.left = invertTree(root.right);
-            root.right = null;
-            return root;
-        }
-
-        if (root.right == null) { // root.left != null
-            root.right = invertTree(root.left);
-            root.left = null;
-            return root;
-        }
-
-        Node tempNode = invertTree(root.left);
-        root.left = invertTree(root.right);
-        root.right = tempNode;
+        root.right = left;
+        root.left = right;
 
         return root;
+    }
+
+    public void invertTreeNotRecursive() {
+        Queue<Node> queue = new LinkedList<>();
+
+        if (root == null) {
+            return;
+        }
+
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            Node cur = queue.remove();
+
+            Node temp = cur.left;
+            cur.left = cur.right;
+            cur.right = temp;
+
+            if (cur.left != null) {
+                queue.add(cur.left);
+            }
+            if (cur.right != null) {
+                queue.add(cur.right);
+            }
+        }
     }
 
     private class Node {
