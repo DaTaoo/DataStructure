@@ -257,7 +257,7 @@ public class Solution {
     /**
      * Given a sorted linked list, delete all duplicates such that each element appear only once.
      * @param head ListNode
-     * @return ListNode that has no duplicate nodes
+     * @return ListNode after delete all the duplicate nodes
      */
     public static ListNode deleteDuplicates(ListNode head) {
         ListNode dummy = new ListNode(-1);
