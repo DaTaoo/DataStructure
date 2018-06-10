@@ -1,9 +1,5 @@
 package com.ImoocProjects.TestCase;
 
-import com.ImoocProjects.BinarySearchTree.BST;
-import com.ImoocProjects.LinkedList.LinkedList;
-import com.ImoocProjects.Queue.LinkedListQueue;
-import com.ImoocProjects.Queue.LoopQueue;
 import com.ImoocProjects.Queue.Queue;
 import com.ImoocProjects.Stack.Stack;
 
@@ -44,23 +40,9 @@ public class Main {
     }
 
 
-
     public static void main(String[] args) {
-	// write your code here
-        BST<Integer> tree = new BST<>();
+        // write your code here
 
-        Random random = new Random();
 
-        for (int i = 0; i < 6; i++) {
-            tree.add(random.nextInt(100));
-        }
-
-        tree.preOrderTraverse();
-
-        System.out.println("----");
-
-        tree.invertTree();
-
-        tree.preOrderTraverse();
     }
 }
